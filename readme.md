@@ -84,3 +84,9 @@ function view (state, emit) {
   `
 }
 ```
+
+## API
+
+#### `state.events.CONTENT_LOAD`
+
+We extend Choo’s state object with `CONTENT_LOAD`, which can be used to reload the site’s state.
