@@ -10,15 +10,20 @@ function plugin (contentDir) {
     state.content = { }
     state.loaded = false
 
-    try {
-      state.content = await loadContent(contentDir)
-      state.p2p = true
-    } catch (err) {
-      state.p2p = false
-    }
+    state.events.CONTENT_LOAD = 'content:load'
+    emitter.on(state.events.CONTENT_LOAD, contentLoad)
+    emitter.on(state.events.DOMCONTENTLOADED, contentLoad)
 
-    state.loaded = true
-    emitter.emit(state.events.RENDER)
+    async function contentLoad (data) {
+      try {
+        state.content = await loadContent(contentDir)
+        state.p2p = true
+      } catch (err) {
+        state.p2p = false
+      }
+      state.loaded = true
+      emitter.emit(state.events.RENDER)
+    }
   }
 }
 
