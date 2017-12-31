@@ -4,11 +4,11 @@ A Choo plugin for reading a content directory with Hypha
 
 ## Usage
 
-```
+```js
 var choo = require('choo')
 var app = choo()
 
-app.use(require('choo-dat-hypha')('./content'))
+app.use(require('choo-dat-hypha')('/content'))
 
 if (!module.parent) app.mount('body')
 else module.exports = app
