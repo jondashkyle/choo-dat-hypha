@@ -80,7 +80,7 @@ function view (state, emit) {
   return html`
     <body>
       The current page is ${state.page.title}
-    </body
+    </body>
   `
 }
 ```
