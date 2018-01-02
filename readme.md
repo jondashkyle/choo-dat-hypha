@@ -104,4 +104,4 @@ state.hypha = {
 
 #### state.events.CONTENT_LOAD
 
-Emitting this event will reload your `state.content`.
+Emitting this event will reload `state.content`.
