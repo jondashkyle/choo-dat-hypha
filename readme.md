@@ -51,7 +51,7 @@ Now your content gets loaded into your Choo app’s state, and a route is create
 
 ## Options
 
-```
+```js
 var chooDatHypha = require('choo-dat-hypha')
 var archive = new DatArchive(window.location.toString())
 
