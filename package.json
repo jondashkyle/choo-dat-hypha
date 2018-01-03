@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jondashkyle/choo-dat-hypha#readme",
   "dependencies": {
     "hypha": "^0.1.2",
-    "object-values": "^1.0.0"
+    "object-values": "^1.0.0",
+    "xtend": "^4.0.1"
   }
 }

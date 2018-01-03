@@ -49,6 +49,26 @@ Organize them within a directory structure alongside media assets.
 
 Now your content gets loaded into your Choo app’s state, and a route is created for each of your pages!
 
+## Options
+
+```
+var chooDatHypha = require('choo-dat-hypha')
+var archive = new DatArchive(window.location.toString())
+
+chooDatHypha('/content', {
+  archive: archive,
+  render: false
+})
+```
+
+#### `archive`
+
+Provide your own instance of DatArchive, useful for instantiating once within your app.
+
+#### `render`
+
+Should Choo automatically re-render after content loads? Boolean value defaulting to `true`.
+
 ## Pattern
 
 To easily access the data for each of your pages simply compare the `state.href` against your `state.content` object in a composable function.
@@ -105,3 +125,7 @@ state.hypha = {
 #### state.events.CONTENT_LOAD
 
 Emitting this event will reload `state.content`.
+
+#### state.events.CONTENT_LOADED
+
+Listen to this event for when content is loaded.
