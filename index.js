@@ -22,6 +22,7 @@ function plugin (contentDir, options) {
       error: '',
       loaded: false,
       isOwner: false,
+      online: navigator.onLine,
       p2p: false
     }
 

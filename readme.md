@@ -118,7 +118,8 @@ state.hypha = {
   error: '',
   loaded: false,
   isOwner: false,
-  p2p: false
+  p2p: false,
+  online: true
 }
 ```
 
