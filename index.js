@@ -17,11 +17,9 @@ function plugin (parent, options) {
   options = xtend(defaults, options)
   if (typeof parent === 'string') { options.parent = parent }
   assert(typeof options.parent === 'string', 'Please provide a content directory')
-  options.url || window.location.toString()
+  options.url = options.url || window.location.toString()
 
   return async function store (state, emitter, app) {
-    options.archive = options.archive || createArchive()
-
     state.content = { }
 
     state.hypha = {
@@ -32,6 +30,8 @@ function plugin (parent, options) {
       p2p: false,
       url: options.url
     }
+
+    options.archive = options.archive || createArchive()
 
     state.events.CONTENT_LOAD = 'content:load'
     state.events.CONTENT_LOADED = 'content:loaded'
@@ -48,7 +48,6 @@ function plugin (parent, options) {
       } catch (err) {
         state.hypha.p2p = false
         state.hypha.error = err.message
-        throw err
       }
 
       state.hypha.loaded = true
