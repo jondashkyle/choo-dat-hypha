@@ -1,6 +1,6 @@
 {
   "name": "choo-dat-hypha",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A Choo plugin for reading a content directory with Hypha ",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jondashkyle/choo-dat-hypha#readme",
   "dependencies": {
-    "hypha": "^0.1.2",
+    "hypha": "^0.2.0",
     "object-values": "^1.0.0",
     "xtend": "^4.0.1"
   }
