@@ -130,3 +130,7 @@ Emitting this event will reload `state.content`.
 #### state.events.CONTENT_LOADED
 
 Listen to this event for when content is loaded.
+
+## Todo
+
+- [ ] Read blueprints
