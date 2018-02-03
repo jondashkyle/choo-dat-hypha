@@ -7,14 +7,9 @@ function plugin (parent, options) {
   return function (state, emitter, app) {
     var enoki = new Enoki()
 
-    state.content = {
-      loaded: false
-    }
-
-    state.site = {
-      loaded: false,
-      p2p: false
-    }
+    state.site = { loaded: false, p2p: false }
+    state.content = { }
+    state.media = { }
 
     state.events.CONTENT_LOADED = 'content:loaded'
     state.events.CONTENT_LOAD = 'content:load'

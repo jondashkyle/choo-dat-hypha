@@ -1,5 +1,6 @@
 {
   "content": "/content",
+  "file": "index.txt",
   "blueprints": "/blueprints",
   "contentUrl": "",
   "config": "enoki.json",
