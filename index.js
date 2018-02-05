@@ -15,13 +15,13 @@ function plugin (parent, options) {
     state.events.CONTENT_LOAD = 'content:load'
 
     emitter.on(state.events.DOMCONTENTLOADED, contentLoad)
-    emitter.on(state.events.ARCHIVE_DEFINE, archiveDefine)
     emitter.on(state.events.CONTENT_LOAD, contentLoad)
 
     async function contentLoad (props) {
       props = props || { }
       await enoki.load(props.url)
       state.content = await enoki.readContent()
+      console.log(state.content)
       state.site = await enoki.readSite()
       emitter.emit(state.events.CONTENT_LOADED)
       if (options.render !== false) emitter.emit(state.events.RENDER)

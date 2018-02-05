@@ -14,7 +14,7 @@ Create a new Choo app and use the `choo-dat-hypha` plugin.
 var choo = require('choo')
 var app = choo()
 
-app.use(require('choo-dat-hypha')('/content'))
+app.use(require('choo-dat-hypha')())
 
 if (!module.parent) app.mount('body')
 else module.exports = app
@@ -48,26 +48,6 @@ Organize them within a directory structure alongside media assets.
 ```
 
 Now your content gets loaded into your Choo app’s state, and a route is created for each of your pages!
-
-## Options
-
-```js
-var chooDatHypha = require('choo-dat-hypha')
-var archive = new DatArchive(window.location.toString())
-
-chooDatHypha('/content', {
-  archive: archive,
-  render: false
-})
-```
-
-#### `archive`
-
-Provide your own instance of DatArchive, useful for instantiating once within your app.
-
-#### `render`
-
-Should Choo automatically re-render after content loads? Boolean value defaulting to `true`.
 
 ## Pattern
 
@@ -114,12 +94,12 @@ State is extended with these objects:
 ```
 state.content = { }
 
-state.hypha = {
-  error: '',
+state.site = {
+  blueprints: { },
+  config: { },
+  info: { },
   loaded: false,
-  isOwner: false,
-  p2p: false,
-  online: true
+  p2p: false
 }
 ```
 
